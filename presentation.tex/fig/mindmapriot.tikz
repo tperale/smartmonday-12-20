@@ -1,0 +1,61 @@
+\begin{center}
+\scalebox{0.45}{%
+\begin{tikzpicture}
+\path[mindmap,concept color=black,text=white]
+  node[concept] {RIOT OS}
+  [clockwise from=0]
+  child[concept color=green!50!black] {
+    node[concept] {OS}
+    [clockwise from=90]
+    child[concept color=green!60!black] { node[concept] {Driver} }
+    child[concept color=green!60!black] { node[concept] {Thread} }
+    child[concept color=green!60!black] { node[concept] {Concurence} }
+    child[concept color=green!60!black] { node[concept] {Message} }
+  }  
+  child[concept color=blue] {
+    node[concept] {IoT}
+    [clockwise from=-30]
+    child[concept color=blue!70] { node[concept] {LPWAN, Ethernet, WiFi} }
+    child[concept color=blue!70] { node[concept] {CoAP, MQTT} }
+    child[concept color=blue!70] { node[concept] {RPL} }
+  }
+  child[concept color=red] { 
+    node[concept] {Compatibilité} 
+    [clockwise from=-80]
+    child[concept color=red!80]  { 
+      node[concept] {Framework} 
+      [clockwise from=-45]
+      child[concept color=red!60] { node[concept] {Arduino} }
+      child[concept color=red!60] { node[concept] {MicroPython} }
+      child[concept color=red!60] { node[concept] {LUA} }
+      child[concept color=red!60] { node[concept] {Jerryscript} }
+    }
+    child[concept color=red!80]  { 
+      node[concept] {Lib} 
+      [counterclockwise from=-140]
+      child[concept color=red!60] { node[concept] {Tensorflow} }
+      child[concept color=red!60] { node[concept] {SSL} }
+    }
+    child[concept color=red!80]  { 
+      node[concept] {Language} 
+      [counterclockwise from=-140]
+      child[concept color=red!60] { node[concept] {C++} }
+    }
+  }
+  child[concept color=orange] { 
+    node[concept] {Autres} 
+    [counterclockwise from=90]
+    child[concept color=orange!80] { node[concept] {FATfs} }
+    child[concept color=orange!80] { 
+      node[concept] {100+ boards} 
+      [counterclockwise from=120]
+      child[concept color=orange!60] { node[concept] {ESP32} }
+      child[concept color=orange!60] { node[concept] {STM32} }
+      child[concept color=orange!60] { node[concept] {ATMEGA} }
+      child[concept color=orange!60] { node[concept] {Native} }
+    }
+    child[concept color=orange!80] { node[concept] {Exemples} }
+  };
+\end{tikzpicture}
+}
+\end{center}

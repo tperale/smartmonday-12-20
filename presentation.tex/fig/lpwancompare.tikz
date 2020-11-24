@@ -1,0 +1,59 @@
+\begin{center}
+\scalebox{0.6}{%
+\begin{tikzpicture}
+  \draw[->,thick] (-0.1,0)--(12,0) node[right]{Range};
+  \draw[->,thick] (0,-0.1)--(0,8) node[above]{Data Rate};
+  \node[] at (1, -0.5) {10m};
+  \draw[] (1,-0.1)--(1,0.1);
+  \node[] at (3, -0.5) {100m};
+  \draw[] (3,-0.1)--(3,0.1);
+  \node[] at (5, -0.5) {1km};
+  \draw[] (5,-0.1)--(5,0.1);
+  \node[] at (7, -0.5) {10km};
+  \draw[] (7,-0.1)--(7,0.1);
+  \node[] at (9, -0.5) {100km};
+  \draw[] (9,-0.1)--(9,0.1);
+
+  \node[] at (-1.2, 1) {1 kbit/sec};
+  \draw[] (-0.1,1)--(0.1,1);
+  \node[] at (-1.2, 3) {1 Mbit/sec};
+  \draw[] (-0.1,3)--(0.1,3);
+  \node[] at (-1.2, 5) {100 Mbit/sec};
+  \draw[] (-0.1,5)--(0.1,5);
+  \node[] at (-1.2, 7) {1 Gbit/sec};
+  \draw[] (-0.1,7)--(0.1,7);
+
+  \node[draw,fill=white] at (8,1.5) (lora) {LoRa};
+  \node[draw,fill=white] at (8.7,0.8) (sigfox) {SigFox};
+  \node[draw,fill=white] at (7.4,2.2) (nb) {NB-IOT};
+  \begin{scope}[on background layer]
+    \node[draw,fill=blue!30,fit=(lora) (sigfox) (nb), label=above:{LPWAN}] {};
+  \end{scope}
+
+  \node[draw,fill=white] at (2.2,3.5) (bluetooth) {Bluetooth};
+  \node[draw,fill=white] at (2.7,2.5) (zigbee) {ZigBee};
+  \node[draw,fill=white] at (2.0,1.8) (ble) {BLE};
+  \begin{scope}[on background layer]
+    \node[draw,fill=blue!10,fit=(bluetooth) (zigbee) (ble), label=above:{Short-range}] {};
+  \end{scope}
+
+  \node[draw,fill=white] at (3,5) (wifi) {WiFi};
+  \begin{scope}[on background layer]
+    \node[draw,fill=blue!50,fit=(wifi)] {};
+  \end{scope}
+
+  \node[draw,fill=white] at (6.8,5) (lte) {LTE};
+  \node[draw,fill=white] at (5.8,6) (5g) {5G};
+  \begin{scope}[on background layer]
+    \node[draw,fill=blue!60,fit=(lte) (5g), label=above:{Cellular}] {};
+  \end{scope}
+
+  \node[] at (6.9,8.2) (leg5) {\small Low};
+  \node[draw,fill=blue!10] at (7.5,8.2) (leg1) {};
+  \node[draw,fill=blue!30] at (7.8,8.2) (leg2) {};
+  \node[draw,fill=blue!50] at (8.1,8.2) (leg3) {};
+  \node[draw,fill=blue!60] at (8.4,8.2) (leg4) {};
+  \node[] at (10.7,8.2) (leg5) {\small High Power Consumption};
+\end{tikzpicture}
+}
+\end{center}

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+all=$(ls -d *.tex/ | sed -e "s/.tex\//.pdf/g")
+
+[ -f .pdfignore ] || touch .pdfignore
+
+for ignore in $(cat .pdfignore)
+do
+  all=$(echo $all | sed -e "s/${ignore}//g")
+done
+
+echo $all

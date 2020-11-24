@@ -1,0 +1,35 @@
+\begin{center}
+\scalebox{0.6}{%
+\begin{tikzpicture}
+\path[mindmap,concept color=black,text=white]
+  node[concept] {Internet of Things}
+  [clockwise from=0]
+  child[concept color=green!50!black] {
+    node[concept] {Smart House}
+    [clockwise from=90]
+    child { node[concept] {Frigo} }
+    child { node[concept] {Machine à laver} }
+    child { node[concept] {Sonette} }
+    child { node[concept] {TV} }
+  }  
+  child[concept color=blue] {
+    node[concept] {Smart Agriculture}
+    [clockwise from=-30]
+    child { node[concept] {Météo} }
+    child { node[concept] {Monitoring des récoltes} }
+  }
+  child[concept color=red] { 
+    node[concept] {Smart Health} 
+    [clockwise from=-90]
+    child { node[concept] {Monitoring des patients} }
+  }
+  child[concept color=orange] { 
+    node[concept] {Smart Cities} 
+    [counterclockwise from=90]
+    child { node[concept] {Parking} }
+    child { node[concept] {Électricité} }
+    child { node[concept] {Eaux} }
+  };
+\end{tikzpicture}
+}
+\end{center}

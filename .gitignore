@@ -1,0 +1,4 @@
+presentation.pdf
+presentation.tex/out/*
+.pdfignore
+.makefile

@@ -1,0 +1,35 @@
+\begin{center}
+\scalebox{0.8}{%
+\begin{tikzpicture}[auto,node distance=1.2cm]
+  \tikzstyle{comment}=[ right=2pt, font=\small, fill=white, text=black, draw=black, ]
+  \tikzstyle{every state}=[rectangle,thick,draw=black,fill=gray!20,text=black, minimum width= 6cm, minimum height= 1.00cm ]
+  \tikzstyle{smallstate}=[rectangle,thick,draw=black!80,fill=gray!10,text=black, minimum width= 6cm, minimum height= 0.25cm ]
+  \tikzstyle{innerstate}=[rectangle,thick,draw=black,fill=gray!10,text=black, minimum width= 4cm, minimum height= 1.00cm ]
+
+  \only<1>{
+    \node[state] at (0, 0) (A)                  {Application};
+    \node[state]         (B) [below of=A]       {Presentation};
+    \node[state]         (C) [below of=B]       {Session};
+    \node[state]         (D) [below of=C]       {Transport};
+    \node[state]         (E) [below of=D]       {Network};
+    \node[state]         (F) [below of=E]       {Data Link};
+    \node[state]         (G) [below of=F]       {Physical};
+    \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,black!50] (D.south west) -- (B.north west) node[black!50,midway,left,xshift=-26pt] {\tiny Abstraction};
+  }
+
+  \only<2>{
+    \node[state] at (0, 0) (A)                  {Application};
+    \node[smallstate]    (B) [below of=A]       {...};
+    \node[state]         (E) [below of=B]       {Network};
+    \node[state]         (F) [below of=E]       {Data Link};
+    \node[state]         (G) [below of=F]       {Physical};
+    \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,white] (D.south west) -- (B.north west) node[white,midway,left,xshift=-26pt] {\tiny Abstraction};
+
+    \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,black!70] (E.south west) -- (E.north west) node[black!70,midway,left,xshift=-6pt] {\tiny Internet Integration};
+    \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,black!70] (F.south west) -- (F.north west) node[black!70,midway,left,xshift=-6pt] {\tiny Access};
+    \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,black!70] (G.south west) -- (G.north west) node[black!70,midway,left,xshift=-6pt] {\tiny Radio Comm};
+  }
+
+\end{tikzpicture}
+}
+\end{center}

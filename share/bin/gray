@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[ "$1" -nt "$2" ]]; then
+  gs -sOutputFile=$2 -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dCompatibilityLevel=1.4 -dNOPAUSE -dBATCH $1 >> /dev/null
+fi

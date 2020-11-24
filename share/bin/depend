@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[ -f $*/config ] && . $*/config
+
+depends(){
+  for pdf in $depend
+  do
+    echo -n "${pdf}.pdf "
+  done
+}
+
+depends | sed -e "s/.pdf.pdf/.pdf/g"
