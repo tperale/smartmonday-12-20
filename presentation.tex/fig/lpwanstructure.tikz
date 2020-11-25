@@ -1,0 +1,109 @@
+\begin{center}
+\scalebox{0.6}{
+\begin{tikzpicture}[
+  radiation/.style={{decorate,decoration={expanding waves,angle=90,segment length=4pt}}},
+  ports/.style={
+    line width=0.3pt,
+    top color=gray!20,
+    bottom color=gray!80
+  },
+  rack switch/.style={
+    minimum width=1.25cm,
+    minimum height=0.25cm,
+    parallelepiped,fill=white, draw,
+    parallelepiped offset x=2mm,
+    parallelepiped offset y=1.25mm,
+    xscale=-1,
+    path picture={
+      \draw[top color=gray!5,bottom color=gray!40]
+      (path picture bounding box.south west) rectangle
+      (path picture bounding box.north east);
+      \coordinate (A-west) at ([xshift=-0.2cm]path picture bounding box.west);
+      \coordinate (A-center) at ($(path picture bounding box.center)!0!(path
+        picture bounding box.south)$);
+      \foreach \x in {0.275,0.525,0.775}{
+        \draw[ports]([yshift=-0.05cm]$(A-west)!\x!(A-center)$)
+          rectangle +(0.1,0.05);
+        \draw[ports]([yshift=-0.125cm]$(A-west)!\x!(A-center)$)
+          rectangle +(0.1,0.05);
+       }
+      \coordinate (A-east) at (path picture bounding box.east);
+      \foreach \x in {0.085,0.21,0.335,0.455,0.635,0.755,0.875,1}{
+        \draw[ports]([yshift=-0.1125cm]$(A-east)!\x!(A-center)$)
+          rectangle +(0.05,0.1);
+      }
+    }
+  },
+  server/.style={
+    fill=white, draw,
+    minimum width=0.35cm,
+    minimum height=0.75cm,
+    parallelepiped,
+    parallelepiped offset x=3mm,
+    parallelepiped offset y=2mm,
+    xscale=-1,
+    path picture={
+      \draw[top color=gray!5,bottom color=gray!40]
+      (path picture bounding box.south west) rectangle
+      (path picture bounding box.north east);
+      \coordinate (A-center) at ($(path picture bounding box.center)!0!(path
+        picture bounding box.south)$);
+      \coordinate (A-west) at ([xshift=-0.575cm]path picture bounding box.west);
+      \draw[ports]([yshift=0.1cm]$(A-west)!0!(A-center)$)
+        rectangle +(0.2,0.065);
+      \draw[ports]([yshift=0.01cm]$(A-west)!0.085!(A-center)$)
+        rectangle +(0.15,0.05);
+      \fill[black]([yshift=-0.35cm]$(A-west)!-0.1!(A-center)$)
+        rectangle +(0.235,0.0175);
+      \fill[black]([yshift=-0.385cm]$(A-west)!-0.1!(A-center)$)
+        rectangle +(0.235,0.0175);
+      \fill[black]([yshift=-0.42cm]$(A-west)!-0.1!(A-center)$)
+        rectangle +(0.235,0.0175);
+    }
+  },
+  antenna/.pic={
+    code={\tikzset{scale=2/10}
+      \draw[semithick] (0,0) -- (1,4);% left line
+      \draw[semithick] (3,0) -- (2,4);% right line
+      \draw[semithick] (0,0) arc (180:0:1.5 and -0.5);
+      \node[inner sep=4pt] (circ) at (1.5,5.5) {};
+      \draw[semithick] (1.5,5.5) circle(8pt);
+      \draw[semithick] (1.5,5.5cm-8pt) -- (1.5,4);
+      \draw[semithick] (1.5,4) ellipse (0.5 and 0.166);
+      \draw[semithick,radiation,decoration={angle=45}] (1.5cm+8pt,5.5) -- +(0:2);
+      \draw[semithick,radiation,decoration={angle=45}] (1.5cm-8pt,5.5) -- +(180:2);
+    }
+  },
+  node/.pic={
+    code={\tikzset{scale=2/10}
+      \draw[semithick] (1.5,-0.5) -- (1.5,1.5cm-8pt);
+      \draw[semithick] (1.5,1.5) circle(8pt);
+      \draw[semithick,radiation,decoration={angle=45}] (1.5cm+8pt,1.5) -- +(0:3);
+      \draw[semithick,radiation,decoration={angle=45}] (1.5cm-8pt,1.5) -- +(180:3);
+    }
+  }
+]
+  \draw[color=blue!20,fill=blue!20] (-1.8,2) circle (2.8cm);
+  \draw[color=blue!20,fill=blue!20] (-1.8,0) circle (2.3cm);
+  \draw[color=blue!20,fill=blue!20] (-1.8,-2) circle (2.8cm);
+
+  \path (0.5,0) edge [-,semithick,draw=gray!70] (2,0);
+  \path (2,0) edge [-,semithick,draw=gray!70] (4,2);
+  \path (2,0) edge [-,semithick,draw=gray!70] (4,0);
+  \path (2,0) edge [-,semithick,draw=gray!70] (4,-2);
+
+  \path (0,-0.4) pic [fill=white,scale=1] {antenna};
+
+  \path (-2,2) pic [black,scale=0.8] {node};
+  \path (-2,0) pic [black,scale=0.8] {node};
+  \path (-2,-2) pic [black,scale=0.8] {node};
+
+  \node[rack switch] at (2,0) {};
+
+  \node[server] (loraserv) at (4,0) {};
+  \node[server] (loraserv) at (4,2) {};
+  \node[server] (loraserv) at (4,-2) {};
+\end{tikzpicture}
+}
+\end{center}
+ 
