@@ -7,22 +7,22 @@
   \tikzstyle{innerstate}=[rectangle,thick,draw=black,fill=gray!10,text=black, minimum width= 4cm, minimum height= 1.00cm ]
 
   \only<1>{
-    \node[state] at (0, 0) (A)                  {Application};
-    \node[state]         (B) [below of=A]       {Presentation};
-    \node[state]         (C) [below of=B]       {Session};
-    \node[state]         (D) [below of=C]       {Transport};
-    \node[state]         (E) [below of=D]       {Network};
-    \node[state]         (F) [below of=E]       {Data Link};
-    \node[state]         (G) [below of=F]       {Physical};
+    \node[state] at (0, 0) (A)                  {Application Layer};
+    \node[state]         (B) [below of=A]       {Presentation Layer};
+    \node[state]         (C) [below of=B]       {Session Layer};
+    \node[state]         (D) [below of=C]       {Transport Layer};
+    \node[state]         (E) [below of=D]       {Network Layer};
+    \node[state]         (F) [below of=E]       {Data Link Layer (MAC)};
+    \node[state]         (G) [below of=F]       {Physical Layer};
     \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,black!50] (D.south west) -- (B.north west) node[black!50,midway,left,xshift=-26pt] {\tiny Abstraction};
   }
 
   \only<2>{
-    \node[state] at (0, 0) (A)                  {Application};
+    \node[state] at (0, 0) (A)                  {Application Layer};
     \node[smallstate]    (B) [below of=A]       {...};
-    \node[state]         (E) [below of=B]       {Network};
-    \node[state]         (F) [below of=E]       {Data Link};
-    \node[state]         (G) [below of=F]       {Physical};
+    \node[state]         (E) [below of=B]       {Network Layer};
+    \node[state]         (F) [below of=E]       {Data Link Layer (MAC)};
+    \node[state]         (G) [below of=F]       {Physical Layer};
     \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,white] (D.south west) -- (B.north west) node[white,midway,left,xshift=-26pt] {\tiny Abstraction};
 
     \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,black!70] (E.south west) -- (E.north west) node[black!70,midway,left,xshift=-6pt] {\tiny Internet Integration};
