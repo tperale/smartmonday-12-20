@@ -1,0 +1,15 @@
+\begin{center}
+\scalebox{0.8}{%
+\begin{tikzpicture}[auto,node distance=1.2cm]
+  \tikzstyle{comment}=[ right=2pt, font=\small, fill=white, text=black, draw=black, ]
+  \tikzstyle{every state}=[rectangle,thick,draw=black,fill=gray!20,text=black, minimum width= 6cm, minimum height= 1.00cm ]
+  \tikzstyle{smallstate}=[rectangle,thick,draw=black!80,fill=gray!10,text=black, minimum width= 6cm, minimum height= 0.25cm ]
+  \tikzstyle{innerstate}=[rectangle,thick,draw=black,fill=gray!10,text=black, minimum width= 4cm, minimum height= 1.00cm ]
+
+  \node[state,color=gray!40,fill=gray!20] at (0, 0) (A)            { Application Layer};
+  \node[state,color=gray!40,fill=gray!20]         (E) [below of=A] { Network Layer};
+  \node[state]         (F) [below of=E]                            { LoRaWAN };
+  \node[state]         (G) [below of=F]                            { LoRa };
+\end{tikzpicture}
+}
+\end{center}
