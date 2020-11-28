@@ -2,19 +2,19 @@
 \scalebox{0.8}{%
 \begin{tikzpicture}[auto,node distance=1.2cm]
   \tikzstyle{comment}=[ right=2pt, font=\small, fill=white, text=black, draw=black, ]
-  \tikzstyle{every state}=[rectangle,thick,draw=black,fill=gray!20,text=black, minimum width= 4cm, minimum height= 1.00cm ]
-  \tikzstyle{smallstate}=[rectangle,thick,draw=black!80,fill=gray!10,text=black, minimum width= 4cm, minimum height= 0.25cm ]
+  \tikzstyle{every state}=[rectangle,thick,draw=black,fill=gray!20,text=black, minimum width= 3cm, minimum height= 1.00cm ]
+  \tikzstyle{smallstate}=[rectangle,thick,draw=black!80,fill=gray!10,text=black, minimum width= 3cm, minimum height= 0.25cm ]
   \tikzstyle{interstate}=[-,dotted,thick,draw=black!70]
 
   \node[state] at (0, 0) (A)                  {Application};
   \node[smallstate]    ([yshift=5pt]B) [below of=A]       {...};
   \node[state]         (E) [below of=B]       {Network};
-  \draw[interstate] ([yshift=9pt]E.north west) -- ([yshift=9pt, xshift=200pt]E.north east);
-  \draw[interstate] ([yshift=-3pt]E.south west) -- ([yshift=-3pt, xshift=200pt]E.south east);
+  \draw[interstate] ([yshift=9pt]E.north west) -- ([yshift=9pt, xshift=240pt]E.north east);
+  \draw[interstate] ([yshift=-3pt]E.south west) -- ([yshift=-3pt, xshift=240pt]E.south east);
   \node[state]         (F) [below of=E]       {Data Link};
-  \draw[interstate] ([yshift=-3pt]F.south west) -- ([yshift=-3pt, xshift=200pt]F.south east);
+  \draw[interstate] ([yshift=-3pt]F.south west) -- ([yshift=-3pt, xshift=240pt]F.south east);
   \node[state]         (G) [below of=F]       {Physical};
-  \draw[interstate] ([yshift=-3pt]G.south west) -- ([yshift=-3pt, xshift=200pt]G.south east);
+  \draw[interstate] ([yshift=-3pt]G.south west) -- ([yshift=-3pt, xshift=240pt]G.south east);
 
   \draw[thick,fill=blue!30] ([xshift=10pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny IEEE 802.15.4} ([xshift=30pt]F.north east);
 
@@ -26,12 +26,15 @@
 
   \draw[thick,fill=blue!30] ([xshift=100pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny IEEE 802.11} ([xshift=120pt]F.north east);
 
-  \draw[thick,fill=blue!30] ([xshift=130pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny Bluetooth/BLE} ([xshift=150pt]A.north east);
+  \draw[dotted,fill=gray!10] ([xshift=130pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny IEEE 802.11} ([xshift=150pt]F.north east);
+  \draw[thick,fill=blue!30] ([xshift=130pt]F.north east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny WiFi} ([xshift=150pt]E.north east);
 
-  \draw[thick,fill=blue!30] ([xshift=160pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRa} ([xshift=180pt]G.north east);
+  \draw[thick,fill=blue!30] ([xshift=160pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny Bluetooth/BLE} ([xshift=180pt]A.north east);
 
-  \draw[dotted,fill=gray!10] ([xshift=190pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRa} ([xshift=210pt]G.north east);
-  \draw[thick,fill=blue!30] ([xshift=190pt]G.north east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRaWAN} ([xshift=210pt]E.north east);
+  \draw[thick,fill=blue!30] ([xshift=190pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRa} ([xshift=210pt]G.north east);
+
+  \draw[dotted,fill=gray!10] ([xshift=220pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRa} ([xshift=240pt]G.north east);
+  \draw[thick,fill=blue!30] ([xshift=220pt]G.north east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRaWAN} ([xshift=240pt]E.north east);
 \end{tikzpicture}
 }
 \end{center}
