@@ -7,9 +7,8 @@
   \tikzstyle{interstate}=[-,dotted,thick,draw=black!70]
 
   \node[state] at (0, 0) (A)                  {Application};
-  \node[smallstate]    ([yshift=5pt]B) [below of=A]       {...};
-  \node[state]         (E) [below of=B]       {Network};
-  \draw[interstate] ([yshift=9pt]E.north west) -- ([yshift=9pt, xshift=240pt]E.north east);
+  \draw[interstate] ([yshift=-3pt]A.south west) -- ([yshift=-3pt, xshift=240pt]A.south east);
+  \node[state]         (E) [below of=A]       {Network};
   \draw[interstate] ([yshift=-3pt]E.south west) -- ([yshift=-3pt, xshift=240pt]E.south east);
   \node[state]         (F) [below of=E]       {Data Link};
   \draw[interstate] ([yshift=-3pt]F.south west) -- ([yshift=-3pt, xshift=240pt]F.south east);
