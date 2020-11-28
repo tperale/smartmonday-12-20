@@ -28,10 +28,10 @@
 
   \draw[thick,fill=blue!30] ([xshift=130pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny Bluetooth/BLE} ([xshift=150pt]A.north east);
 
-  \draw[thick,fill=blue!30] ([xshift=160pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRa} ([xshift=180pt]F.north east);
+  \draw[thick,fill=blue!30] ([xshift=160pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRa} ([xshift=180pt]G.north east);
 
-  \draw[dotted,fill=gray!10] ([xshift=190pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRa} ([xshift=210pt]F.north east);
-  \draw[thick,fill=blue!30] ([xshift=190pt]F.north east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRaWAN} ([xshift=210pt]E.north east);
+  \draw[dotted,fill=gray!10] ([xshift=190pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRa} ([xshift=210pt]G.north east);
+  \draw[thick,fill=blue!30] ([xshift=190pt]G.north east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny LoRaWAN} ([xshift=210pt]E.north east);
 \end{tikzpicture}
 }
 \end{center}
