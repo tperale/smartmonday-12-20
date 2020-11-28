@@ -1,7 +1,6 @@
 \documentclass{beamer}
-\setbeamertemplate{footline}[frame number]{}
+\usetheme{Madrid} 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}{}
 \usepackage{booktabs}
 \usepackage[autostyle]{csquotes}
 \usepackage{multicol,lipsum,microtype}
@@ -171,9 +170,19 @@
 \def\lav{lavander!90}
 \def\oran{orange!30}
 
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
 \title{LoRa une approche bottom-up}
 \subtitle{}
 \author{Thomas Perale}
+
+\date{Smartmonday Decembre 2020}
 
 \begin{document}
 \frame{\maketitle}
@@ -199,6 +208,8 @@
 \section{RIOT}
 
 \input{presentation.tex/riot.tex}
+
+\input{presentation.tex/backup.tex}
 
 \end{document}
 
