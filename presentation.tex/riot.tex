@@ -2,6 +2,72 @@
 
 \begin{frame}{RIOT}
 \framesubtitle{Introduction}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+ \begin{itemize}
+  \item Un OS pour l'IoT
+  \begin{itemize}
+    \item CAN
+    \item BLE (NimBLE)
+    \item LoRaWAN
+    \item SigFox
+    \item 6LoWPAN, Thread
+  \end{itemize}
+  \item Tickless scheduler
+  \begin{itemize}
+    \item Basse consommation
+  \end{itemize}
+  \item Temps reel
+  \item API pour les drivers
+  \item build, flash et console facile
+  \begin{itemize}
+    \item \lstinline{make flash term}
+  \end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\makebox[\linewidth]{\includegraphics[width=\textwidth]{presentation.tex/fig/riot.png}}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{RIOT}
+\framesubtitle{Introduction}
 \input{presentation.tex/fig/mindmapriot.tikz}
+\end{frame}
+
+\begin{frame}{RIOT}
+\framesubtitle{Concurrence}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+ \begin{itemize}
+  \item Une approche 'from scratch'
+  \begin{itemize}
+    \item Pas de dependance constructeur
+    \item Driver maison
+  \end{itemize}
+  \item Communauté accessible
+  \item Beaucoups de drivers
+  \item Beaucoups de plateformes
+  \begin{itemize}
+    \item Support pour le low-end
+    \item Support CPU 8, 16 bits
+  \end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{center}
+  \includegraphics[width=0.9\textwidth]{presentation.tex/fig/armmbed.png}
+  \includegraphics[width=0.8\textwidth]{presentation.tex/fig/zephyr.png}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Utilisation}
+
+\begin{frame}[t]
+  \frametitle{RIOT}
+  \framesubtitle{Utilisation}
 \end{frame}
 
