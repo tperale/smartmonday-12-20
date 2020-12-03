@@ -1,0 +1,22 @@
+\begin{center}
+\scalebox{0.8}{
+\begin{tikzpicture}
+\begin{axis}[
+  samples=700,
+  domain=0:3*pi,
+  width=7cm, height=3cm,
+  xtick=\empty,
+  ytick=\empty,
+  xlabel={\large $t$},
+  ylabel={\large $v$},
+  xmin=0, xmax=11,
+  ymin=-3, ymax=5,
+  axis lines = middle,
+  very thick,
+  trig format = rad
+]
+\addplot[thick, blue!60]plot (\x, {2*sin(pow(2,(0.8*\x)))});
+\end{axis}
+\end{tikzpicture}
+}
+\end{center}

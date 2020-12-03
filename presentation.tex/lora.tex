@@ -77,24 +77,42 @@ Comment transmettre de l'information numerique avec une radio ?
 \begin{frame}[t]
 \frametitle{LoRa}
 \framesubtitle{Qu'est-ce que LoRa ?}
-\begin{itemize}
-  \item Une methode de modulation propriétaire
+\begin{columns}
+  \begin{column}{0.6\textwidth}
+    
   \begin{itemize}
-    \item Creer par Semtech
-    \item Grenoble, France
+    \item Une methode de modulation propriétaire
+    \begin{itemize}
+      \item Creer par Semtech
+      \item Grenoble, France
+    \end{itemize}
+    \item Transmet sur la bande ISM
+    \begin{itemize}
+      \item 868MHz
+    \end{itemize}
+    \item Longue distance de transmission
+    \item Basse consommation
   \end{itemize}
-  \item Transmet sur la bande ISM
-  \begin{itemize}
-    \item 868MHz
-  \end{itemize}
-  \item Longue distance de transmission
-  \item Basse consommation
-\end{itemize}
+  \end{column}
+  \begin{column}{0.4\textwidth}
+    \makebox[\linewidth]{\includegraphics[page=1,width=0.6\paperwidth]{presentation.tex/fig/lora.png}}
+  \end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{LoRa}
 \framesubtitle{Chirp Spread Spectrum}
-\input{presentation.tex/fig/lorachirp.tikz}
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+    \input{presentation.tex/fig/lorachirp.tikz}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \begin{center}
+      \makebox[\linewidth]{\includegraphics[page=1,width=0.5\paperwidth]{presentation.tex/fig/upchirp.png}}
+    \end{center}
+  \end{column}
+\end{columns}
+
 \end{frame}
 
 \begin{frame}{LoRa}
