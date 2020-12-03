@@ -1,0 +1,20 @@
+\begin{center}
+\scalebox{0.6}{%
+\begin{tikzpicture}[
+  arr/.style={help lines,black!70,<->},
+]
+  \draw[thick,-latex] (0,-2) -- (0,2)node[left] {frequency};
+  \draw[thick,-latex] (-1,0) -- (11.5,0)node[below] {time};
+  \draw[dashed] (1.5,-2) -- (1.5,2);
+  \draw[dashed] (4.5,-2) -- (4.5,2);
+  \draw[dashed] (10.5,-2) -- (10.5,2);
+  \draw[] (0,-1.8) -- (1.5,1.8);
+  \draw[] (1.5,-1.8) -- (4.5,1.8);
+  \draw[] (4.5,-1.8) -- (10.5,1.8);
+
+  \draw[arr] (0.1, -2.2) -- node[fill=white] {$SF7$} (1.4, -2.2);
+  \draw[arr] (1.6, -2.2) -- node[fill=white] {$SF8$} (4.4, -2.2);
+  \draw[arr] (4.6, -2.2) -- node[fill=white] {$SF9$} (10.4, -2.2);
+\end{tikzpicture}
+}
+\end{center}

@@ -6,10 +6,12 @@
   \tikzstyle{smallstate}=[rectangle,thick,draw=black!80,fill=gray!10,text=black, minimum width= 6cm, minimum height= 0.25cm ]
   \tikzstyle{innerstate}=[rectangle,thick,draw=black,fill=gray!10,text=black, minimum width= 4cm, minimum height= 1.00cm ]
 
-  \node[state,color=gray!40,fill=gray!20] at (0, 0) (A)            { Application Layer};
-  \node[state,color=gray!40,fill=gray!20]         (E) [below of=A] { Network Layer};
-  \node[state,color=gray!40,fill=gray!20]         (F) [below of=E] { Data Link Layer (MAC)};
-  \node[state]         (G) [below of=F]                            { LoRa};
+  \node[state,color=gray!40,fill=gray!20] at (0, 0) (A)            { Application Layer };
+  \node[state,color=gray!40,fill=gray!20]         (E) [below of=A] { Network Layer };
+  \node[state,color=gray!40,fill=gray!20]         (F) [below of=E] { Data Link Layer (MAC) };
+  \node[state]         (G) [below of=F]                            { LoRa };
+
+  \node[comment]       at (G.north west) {Physical Layer};
 \end{tikzpicture}
 }
 \end{center}

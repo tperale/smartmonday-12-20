@@ -10,6 +10,9 @@
   \node[state,color=gray!40,fill=gray!20]         (E) [below of=A] { Network Layer};
   \node[state]         (F) [below of=E]                            { LoRaWAN };
   \node[state]         (G) [below of=F]                            { LoRa };
+
+  \node[comment]       at (F.north west) {MAC Layer};
+  \node[comment]       at (G.north west) {Physical Layer};
 \end{tikzpicture}
 }
 \end{center}

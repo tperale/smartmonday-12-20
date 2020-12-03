@@ -57,6 +57,7 @@ Comment transmettre de l'information en utilisant une radio ?
 Comment transmettre de l'information numerique avec une radio ?
 }
 \end{block}
+\vspace{0.5cm}
 \makebox[\linewidth]{\includegraphics[page=1,width=0.4\paperwidth]{presentation.tex/fig/gsm.jpg}}
 \end{frame}
 
@@ -94,14 +95,22 @@ Comment transmettre de l'information numerique avec une radio ?
     \item Basse consommation
     \item Pas cher
     \begin{itemize}
-      \item 2.5€
+      \item Module à 2.5€
     \end{itemize}
+    \item Différent paramêtres influence la communication
   \end{itemize}
   \end{column}
   \begin{column}{0.4\textwidth}
     \makebox[\linewidth]{\includegraphics[page=1,width=0.45\paperwidth]{presentation.tex/fig/lora.png}}
   \end{column}
 \end{columns}
+\end{frame}
+
+\begin{frame}{LoRa}
+\framesubtitle{SDR}
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[page=1,width=0.55\paperwidth]{presentation.tex/fig/sdr.jpg}}
+\end{center}
 \end{frame}
 
 \begin{frame}{LoRa}
@@ -116,7 +125,23 @@ Comment transmettre de l'information numerique avec une radio ?
     \end{center}
   \end{column}
 \end{columns}
+\end{frame}
 
+\begin{frame}{LoRa}
+\framesubtitle{Chirp Spread Spectrum}
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+    \begin{itemize}
+      \item Chaque 'chirp' est modulé pour transmettre de l'information
+      \item La modulation est propriétaire
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \begin{center}
+      \makebox[\linewidth]{\includegraphics[page=1,width=0.40\paperwidth]{presentation.tex/fig/loraspectrum.png}}
+    \end{center}
+  \end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{LoRa}
@@ -129,5 +154,15 @@ Comment transmettre de l'information numerique avec une radio ?
 
 \begin{frame}{LoRa}
 \framesubtitle{Spreading Factor}
-\input{presentation.tex/fig/lorachirpsf.tikz}
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+    \begin{itemize}
+      \item Propre à la modulation de LoRa
+      \item 
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \input{presentation.tex/fig/lorachirpsf.tikz}
+  \end{column}
+\end{columns}
 \end{frame}
