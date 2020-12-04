@@ -146,6 +146,14 @@ Comment transmettre de l'information numerique avec une radio ?
 
 \begin{frame}{LoRa}
 \framesubtitle{Bandwidth}
+\begin{itemize}
+  \item 500, 250, 125 kHz
+  \item Une bande passante elevee $=$ plus de bruit
+  \begin{itemize}
+    \item Plus faible portee
+  \end{itemize}
+  \item Une bande passante elevee $=$ plus de debit
+\end{itemize}
 \end{frame}
 
 \begin{frame}{LoRa}
@@ -153,12 +161,16 @@ Comment transmettre de l'information numerique avec une radio ?
 \end{frame}
 
 \begin{frame}{LoRa}
-\framesubtitle{Spreading Factor}
+\framesubtitle{Spreading Factor (SF)}
 \begin{columns}
   \begin{column}{0.5\textwidth}
     \begin{itemize}
       \item Propre à la modulation de LoRa
-      \item 
+      \item Orthogonalite
+      \begin{itemize}
+        \item Communication concurentielle sur different SF
+      \end{itemize}
+      \item Nombre de symbole par chirp
     \end{itemize}
   \end{column}
   \begin{column}{0.5\textwidth}
