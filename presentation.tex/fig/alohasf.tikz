@@ -1,0 +1,82 @@
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\scalebox{0.8}{
+\begin{tikzpicture}[
+    state/.style={circle, thick,draw=gray!70,fill=gray!20,text=black,scale=0.5},
+]
+\tikzset{
+  pics/carc/.style args={#1:#2:#3:#4}{
+    code={
+      \draw[pic actions] (#1:#3) arc(#1:#2:#3) node[at end,left, black!70] {\tiny #4};
+    }
+  }
+}
+\begin{scope}[shorten >=1pt,auto,node distance=4.5cm]
+  \node[state]         (A) [] {\tiny $N$};
+  \node[state]         (B) [below of=A]       {\tiny $N$};
+  \draw[black!70, dotted, thick] (B) pic{carc=60:120:0.5cm:$SF7$}
+    pic{carc=60:120:1cm:$SF8$} pic{carc=60:120:1.5cm:$SF9$}
+    pic{carc=60:120:2cm:$SF10$} pic{carc=60:120:2.5cm:$SF11$}
+    pic{carc=60:120:3cm:$SF12$};
+\end{scope}
+\end{tikzpicture}
+}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\scalebox{0.6}{
+\begin{tikzpicture}[
+  ack/.style={draw, rectangle, fill=orange!40, inner sep=0pt, outer sep=0pt},
+  tx/.style={draw, rectangle, fill=blue!30,inner sep=0pt, outer sep=0pt},
+  relay/.style={draw, rectangle, fill=green!30,inner sep=0pt, outer sep=0pt},
+  rx/.style={draw, pattern=north west lines, pattern color=black!60, rectangle, inner sep=0pt, outer sep=0pt},
+  arr/.style={help lines,black!70,<->},
+  ]
+  \draw[->,thick] (-0.1,0)--(6,0) node[right]{time};
+  \draw[->,thick] (0,-0.1)--(0,6) node[above]{};
+
+  \draw[dotted] (-0.1,0.5)--(6,0.5);
+  \node[] at (-1.2, 1) {Gateway};
+  \draw[] (-0.1,1)--(0.1,1);
+  \draw[dotted] (-0.1,1.5)--(6,1.5);
+  \node[] at (-1.2, 2) {$SF_{7}$};
+  \draw[] (-0.1,2)--(0.1,2);
+  \draw[dotted] (-0.1,2.5)--(6,2.5);
+  \node[] at (-1.2, 3) {$SF_{8}$};
+  \draw[] (-0.1,3)--(0.1,3);
+  \draw[dotted] (-0.1,3.5)--(6,3.5);
+  \node[] at (-1.2, 4) {$...$};
+  \draw[] (-0.1,4)--(0.1,4);
+  \draw[dotted] (-0.1,4.5)--(6,4.5);
+  \node[] at (-1.2, 5) {$SF_{11}$};
+  \draw[] (-0.1,5)--(0.1,5);
+  \draw[dotted] (-0.1,5.5)--(6,5.5);
+
+  \path (1.3,2) edge[->,dotted,very thick,bend left,black!70] (2.1,2.7);
+  \path (2.2,3) edge[->,dotted,very thick,bend left,black!70] (5.1,4.7);
+
+  % Gateway
+  \node () [rx, fit={(0.1,0.7) (5.9,1.3)}] {};
+  \node () [relay, fit={(5.4,0.7) (5.6,1.3)}] {};
+  % SF7
+  \node () [tx, fit={(1.1,1.7) (1.4,2.3)}] {};
+  % SF8
+  \node () [tx, fit={(2.1,2.7) (2.4,3.3)}] {};
+  % ...
+  % SF11
+  \node () [tx, fit={(5.1,4.7) (5.4,5.3)}] {};
+  \node () [rx, fit={(5.4,4.7) (5.6,5.3)}] {};
+\end{tikzpicture}
+}
+% \caption{Collision between nodes}
+\scalebox{0.6}{
+\begin{tabular}{r@{ }l r@{ }l}
+\begin{tikzpicture}\draw[fill=blue!30,line width=1pt] +(-4pt,-4pt) rectangle +(4pt,4pt);\end{tikzpicture} & Transmission 
+  & \begin{tikzpicture}\draw[pattern=north west lines, pattern color=black!90,line width=1pt] +(-4pt,-4pt) rectangle +(4pt,4pt);\end{tikzpicture} & Reception
+\end{tabular}
+}
+\end{center}
+\end{column}
+\end{columns}
