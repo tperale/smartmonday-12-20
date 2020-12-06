@@ -5,7 +5,20 @@
 \input{presentation.tex/fig/lorawanstack.tikz}
 \end{frame}
 
-\subsection{Un protocole MAC ?}
+\subsection{LoRaWAN ?}
+
+\begin{frame}{LoRaWAN}
+\framesubtitle{Organisation de LoRaWAN}
+% Photo gateway + schema organisation
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+    \input{presentation.tex/fig/lpwanstructure.tikz}    
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \makebox[\linewidth]{\includegraphics[page=1,width=0.4\paperwidth]{presentation.tex/fig/gateway.jpg}}
+  \end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}{LoRaWAN}
 \framesubtitle{Un protocole MAC ?}
@@ -20,32 +33,57 @@ le type de média physique utilisé (Ethernet, WLAN, …)
 \end{frame}
 
 \begin{frame}{LoRaWAN}
-\framesubtitle{Un protocole MAC ?}
+\framesubtitle{Aloha}
 \begin{block}{}
 {
   Quel moyen le plus simple d'interfacer la couche la couche physique ?
 }
 \end{block}
+\input{presentation.tex/fig/aloha.tikz}
 \end{frame}
 
 \begin{frame}{LoRaWAN}
-\framesubtitle{Aloha}
+\framesubtitle{Acknowledgement}
+\begin{block}{}
+{
+  Comment s'assurer de la récèption du message ?
+}
+\end{block}
+\input{presentation.tex/fig/alohaack.tikz}
 \end{frame}
 
 \begin{frame}{LoRaWAN}
-\framesubtitle{LoRaWAN n'est pas LoRa}
+\framesubtitle{Retransmission}
+\input{presentation.tex/fig/alohaack.tikz}
 \end{frame}
 
 \begin{frame}{LoRaWAN}
-\framesubtitle{Organisation de LoRaWAN}
-% Photo gateway + schema organisation
+\framesubtitle{Multiplexing}
+\begin{block}{}
+{
+  Comment éviter les colisions ?
+}
+\end{block}
+\input{presentation.tex/fig/alohaack.tikz}
 \end{frame}
 
 \begin{frame}{LoRaWAN}
-\framesubtitle{Pourquoi LoRa a autant de succes}
-% Facilite de faire sa propre gateway
+\framesubtitle{Pourquoi ce succès ?}
+\begin{itemize}
+  \item LoRaWAN est open source contrairement à ses concurrents
+  \item Possible de créer son réseau privé  
+  \item Possible de créer son propre protocol utilisant LoRa PHY
+  \item The Things Network
+  \begin{itemize}
+    \item Réseau LoRaWAN crowdfunder
+    \item Offrir sa gateway à d'autres utilisateurs
+  \end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{LoRaWAN}
 \framesubtitle{Aller plus loin}
+\begin{itemize}
+  \item Limitation pour le downlink
+\end{itemize}
 \end{frame}

@@ -12,7 +12,7 @@
     \node[state]         (C) [below of=B]       {Session Layer};
     \node[state]         (D) [below of=C]       {Transport Layer};
     \node[state]         (E) [below of=D]       {Network Layer};
-    \node[state]         (F) [below of=E]       {Data Link Layer (MAC)};
+    \node[state]         (F) [below of=E]       {Data Link Layer (MAC+LLC)};
     \node[state]         (G) [below of=F]       {Physical Layer};
     \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,black!50] (D.south west) -- (B.north west) node[black!50,midway,left,xshift=-26pt] {\tiny Abstraction};
   }
@@ -21,7 +21,7 @@
     \node[state] at (0, 0) (A)                  {Application Layer};
     \node[smallstate]    (B) [below of=A]       {...};
     \node[state]         (E) [below of=B]       {Network Layer};
-    \node[state]         (F) [below of=E]       {Data Link Layer (MAC)};
+    \node[state]         (F) [below of=E]       {Data Link Layer (MAC+LLC)};
     \node[state]         (G) [below of=F]       {Physical Layer};
     \draw[decorate,decoration={brace,amplitude=8pt},xshift=-5pt,yshift=0pt,white] (D.south west) -- (B.north west) node[white,midway,left,xshift=-26pt] {\tiny Abstraction};
 

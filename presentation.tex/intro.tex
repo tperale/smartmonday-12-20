@@ -2,8 +2,9 @@
 
 \begin{frame}{Introduction}
 \framesubtitle{Internet of Things}
-% IOT Mind map
-\input{presentation.tex/fig/iotmindmap.tikz}
+\begin{center}
+\makebox[\linewidth]{\includegraphics[page=1,width=0.4\paperwidth]{presentation.tex/fig/iot.png}}
+\end{center}
 \end{frame}
 
 \subsection{LPWAN}
@@ -19,10 +20,20 @@
   \begin{column}{0.5\textwidth}
   \begin{itemize}
     \item Longue portée (7-15km)
-    \item Basse consommation
-    \item Prix faible
     \item Faible débit
-    \item Passerelle: Gateway
+    \begin{itemize}
+      \item $<$ kb/sec
+      \item Dizaine de messages par jours
+    \end{itemize}
+    \item Basse consommation
+    \begin{itemize}
+      \item Plusieurs années de batterie
+    \end{itemize}
+    \item Prix faible
+    \begin{itemize}
+      \item Module à 2.5€
+    \end{itemize}
+    \item Topologie en étoile
   \end{itemize}
   \end{column}
   \begin{column}{0.5\textwidth}
@@ -41,8 +52,4 @@
 \begin{frame}{Introduction}
 \framesubtitle{Network Stack}
 \input{presentation.tex/fig/stackprotocol.tikz}
-\end{frame}
-
-\begin{frame}{Introduction}
-\framesubtitle{}
 \end{frame}

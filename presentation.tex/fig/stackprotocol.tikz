@@ -26,7 +26,7 @@
   \draw[thick,fill=blue!30] ([xshift=100pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny IEEE 802.11} ([xshift=120pt]F.north east);
 
   \draw[dotted,fill=gray!10] ([xshift=130pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny IEEE 802.11} ([xshift=150pt]F.north east);
-  \draw[thick,fill=blue!30] ([xshift=130pt]F.north east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny WiFi} ([xshift=150pt]E.north east);
+  \draw[thick,fill=blue!30] ([xshift=130pt]F.north east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny IP} ([xshift=150pt]E.north east);
 
   \draw[thick,fill=blue!30] ([xshift=160pt]G.south east) rectangle node[rotate=90,align=center,anchor=south,yshift=-6pt] {\tiny Bluetooth/BLE} ([xshift=180pt]A.north east);
 
