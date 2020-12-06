@@ -1,0 +1,36 @@
+\begin{center}
+\scalebox{0.70}{%
+\begin{tikzpicture}[
+  arr/.style={help lines,black!70,<->},
+]
+  \draw[thick,-latex] (0,-2) -- (0,2)node[left] {freq};
+  \draw[thick,-latex] (-0.1,0) -- (5.5,0)node[below] {time};
+  \draw[dashed] (1.5,-2) -- (1.5,2);
+  \draw[dashed] (3.0,-2) -- (3.0,2);
+  \draw[dashed] (4.5,-2) -- (4.5,2);
+
+  \draw[dotted,black!70] (-0.45,0.45) -- (1.5,0.45);
+  \draw[dotted,black!70] (-0.45,-0.45) -- (0.1,-0.45);
+  %
+  \draw[dotted,black!70] (-1.0,0.9) -- (3.0,0.9);
+  \draw[dotted,black!70] (-1.0,-0.9) -- (1.5,-0.9);
+  \draw[dotted,black!70] (-1.0,-0.9) -- (-1.0,0.9);
+  %
+  \draw[dotted,black!70] (-1.5,1.8) -- (4.5,1.8);
+  \draw[dotted,black!70] (-1.5,-1.8) -- (3.0,-1.8);
+  \draw[dotted,black!70] (-1.5,-1.8) -- (-1.5,1.8);
+
+  \node[rotate=90, black!70,fill=white] at (-0.5,0) {\tiny $125kHz$};
+  \node[rotate=90, black!70,fill=white] at (-1.0,0) {\tiny $250kHz$};
+  \node[rotate=90, black!70,fill=white] at (-1.5,0) {\tiny $500kHz$};
+
+  \draw[] (0,-0.45) -- (1.5,0.45);
+  \draw[] (1.5,-0.9) -- (3.0,0.9);
+  \draw[] (3.0,-1.8) -- (4.5,1.8);
+
+  % \draw[arr] (0.1, -2.2) -- node[fill=white] {$SF7$} (1.4, -2.2);
+  % \draw[arr] (1.6, -2.2) -- node[fill=white] {$SF7$} (2.9, -2.2);
+  % \draw[arr] (3.1, -2.2) -- node[fill=white] {$SF7$} (4.4, -2.2);
+\end{tikzpicture}
+}
+\end{center}

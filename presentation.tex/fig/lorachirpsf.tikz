@@ -1,5 +1,5 @@
 \begin{center}
-\scalebox{0.6}{%
+\scalebox{0.52}{%
 \begin{tikzpicture}[
   arr/.style={help lines,black!70,<->},
 ]
