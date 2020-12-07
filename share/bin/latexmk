@@ -8,31 +8,30 @@ export BSTINPUTS=$TEXINPUTS
 export BIBINPUTS=$TEXINPUTS
 # kpsewhich
 
-VERSION=$(``share/bin/version $*``)
-TIMESTAMP=$(``git log -n 1 --format=%ai``)
-WORDCOUNT=$(``share/bin/wordcount $*``)
+VERSION=$($()share/bin/version $*$())
+TIMESTAMP=$($()git log -n 1 --format=%ai$())
+WORDCOUNT=$($()share/bin/wordcount $*$())
 
 [ -f $*/config ] && . $*/config
 
 [ -f $*/index.tex ] && file=$*/index.tex || file=$*/$*
 
-latex(){
-  case $latex in
-    "pdflatex" )
-    latexmk -jobname=$* -pdf -pdflatex="pdflatex -interaction=nonstopmode -halt-on-error -file-line-error --shell-escape --synctex=1 %O '\def\id{$*} \def\version{${VERSION}} \def\timestamp{${TIMESTAMP}} \def\wordcount{$WORDCOUNT} \input{%S}'" ../../$file
-    ;;
-    "xelatex" )
-    latexmk -jobname=$* -pdf -pdflatex="xelatex -interaction=nonstopmode -halt-on-error -file-line-error --shell-escape --synctex=1 %O '\def\id{$*} \def\version{${VERSION}} \def\timestamp{${TIMESTAMP}} \def\wordcount{$WORDCOUNT} \input{%S}'" ../../$file
-    ;;
-    "lualatex" )
-    latexmk -jobname=$* -pdf -pdflatex="lualatex -interaction=nonstopmode -halt-on-error -file-line-error --shell-escape --synctex=1 %O '\def\id{$*} \def\version{${VERSION}} \def\timestamp{${TIMESTAMP}} \def\wordcount{$WORDCOUNT} \input{%S}'" ../../$file
-    ;;
-    "" )
-    latexmk -jobname=$* -pdf -pdflatex="xelatex -interaction=nonstopmode -halt-on-error -file-line-error --shell-escape --synctex=1 %O '\def\id{$*} \def\version{${VERSION}} \def\timestamp{${TIMESTAMP}} \def\wordcount{$WORDCOUNT} \input{%S}'" ../../$file
-    ;;
-  esac
+latex() {
+	case $latex in
+	"pdflatex")
+		latexmk -jobname=$* -pdf -pdflatex="pdflatex -interaction=nonstopmode -halt-on-error -file-line-error --shell-escape --synctex=1 %O '\def\id{$*} \def\version{${VERSION}} \def\timestamp{${TIMESTAMP}} \def\wordcount{$WORDCOUNT} \input{%S}'" ../../$file
+		;;
+	"xelatex")
+		latexmk -jobname=$* -pdf -pdflatex="xelatex -interaction=nonstopmode -halt-on-error -file-line-error --shell-escape --synctex=1 %O '\def\id{$*} \def\version{${VERSION}} \def\timestamp{${TIMESTAMP}} \def\wordcount{$WORDCOUNT} \input{%S}'" ../../$file
+		;;
+	"lualatex")
+		latexmk -jobname=$* -pdf -pdflatex="lualatex -interaction=nonstopmode -halt-on-error -file-line-error --shell-escape --synctex=1 %O '\def\id{$*} \def\version{${VERSION}} \def\timestamp{${TIMESTAMP}} \def\wordcount{$WORDCOUNT} \input{%S}'" ../../$file
+		;;
+	"")
+		latexmk -jobname=$* -pdf -pdflatex="xelatex -interaction=nonstopmode -halt-on-error -file-line-error --shell-escape --synctex=1 %O '\def\id{$*} \def\version{${VERSION}} \def\timestamp{${TIMESTAMP}} \def\wordcount{$WORDCOUNT} \input{%S}'" ../../$file
+		;;
+	esac
 }
-
 
 mkdir -p $*/out
 cd $*

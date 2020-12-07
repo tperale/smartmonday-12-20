@@ -106,27 +106,10 @@ Comment transmettre de l'information numerique avec une radio ?
 \end{frame}
 
 \begin{frame}{LoRa}
-\framesubtitle{SDR}
-\begin{columns}
-  \begin{column}{0.5\textwidth}
-  \begin{itemize}
-    \item Observable avec un RTL-SDR peu cher
-    \item 500kHz - 1766 MHz
-    \item Tentative de reverse du protocol disponible
-    \item GNU Radio
-  \end{itemize}
-  \end{column}
-  \begin{column}{0.5\textwidth}
-   \begin{center}
-    \makebox[\linewidth]{\includegraphics[page=1,width=0.50\paperwidth]{presentation.tex/fig/sdr.jpg}}
-  \end{center}
-  \end{column}
-\end{columns}
-
-\end{frame}
-
-\begin{frame}{LoRa}
 \framesubtitle{Chirp Spread Spectrum}
+\begin{block}
+Information transmit à l'aide de 'chirp'
+\end{block}
 \begin{columns}
   \begin{column}{0.5\textwidth}
     \input{presentation.tex/fig/lorachirp.tikz}
@@ -172,11 +155,6 @@ Comment transmettre de l'information numerique avec une radio ?
   \input{presentation.tex/fig/lorachirpbw.tikz}
 \end{column}
 \end{columns}
-
-\end{frame}
-
-\begin{frame}{LoRa}
-\framesubtitle{Channels}
 \end{frame}
 
 \begin{frame}{LoRa}
@@ -184,12 +162,14 @@ Comment transmettre de l'information numerique avec une radio ?
 \begin{columns}
   \begin{column}{0.4\textwidth}
     \begin{itemize}
-      \item Propre à la modulation de LoRa
+      \item Longueur du chirp
+      \item Nombre de symbôle encodé par chirp
       \item Orthogonalite des SF
       \begin{itemize}
         \item Communications concurentielles
       \end{itemize}
       \item  $R_{s} = \frac{BW}{2^{SF}}$
+      \item $\nearrow$ SF $=$ $\nearrow$ portée
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}

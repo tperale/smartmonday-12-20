@@ -3,20 +3,19 @@
 export PATH="$PATH:$(pwd)/share/bin"
 
 if [[ $(cat /proc/version) == *"Microsoft"* ]]; then
-  echo windows linux subsystem
-  [ -f $*/config ] && dos2unix $*/config
+	echo windows linux subsystem
+	[ -f $*/config ] && dos2unix $*/config
 fi
 
 [ -f $*/config ] && . $*/config
-
 case "$latexmk" in
-  1)
-  share/bin/latexmk $*
-  ;;
-  0)
-  share/bin/latex $*
-  ;;
-  *)
-  share/bin/latex $*
-  ;;
+1)
+	share/bin/latexmk $*
+	;;
+0)
+	share/bin/latex $*
+	;;
+*)
+	share/bin/latex $*
+	;;
 esac

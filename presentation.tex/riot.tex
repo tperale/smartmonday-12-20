@@ -83,8 +83,54 @@
 
 \subsection{Utilisation}
 
-\begin{frame}[t]
-  \frametitle{RIOT}
-  \framesubtitle{Utilisation}
+\begin{frame}[fragile]
+\frametitle{RIOT}
+\framesubtitle{Utilisation}
+  
+\begin{minted}{bash}
+$ ls ./boards/
+arduino-uno
+arduino-zero
+bluepill
+calliope-mini
+esp32-heltec-lora32-v2
+esp32-mh-et-live-minikit
+esp32-ttgo-t-beam
+esp32-wemos-lolin-d32-pro
+esp8266-esp-12x
+esp8266-olimex-mod
+native
+nucleo-f030r8
+stm32f0discovery
+wemos-zero
+\end{minted}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{RIOT}
+\framesubtitle{Utilisation}
+
+\begin{minted}{bash}
+$ make -C <example_dir> BOARD=<board_dir_name> flash
+$ make -C <example_dir> BOARD=<board_dir_name> term
+\end{minted}
+  
+\end{frame}
+
+\begin{frame}
+\frametitle{RIOT}
+\framesubtitle{Utilisation}
+\begin{itemize}
+  \item Exemple
+  \begin{itemize}
+    \item \href{https://github.com/RIOT-OS/RIOT/tree/master/examples/gnrc_lorawan}{$examples/gnrc_lorawan$}
+  \end{itemize}
+  \item Cours
+  \begin{itemize}
+    \item \href{https://riot-os.github.io/riot-course/slides/02-getting-started/}{Getting started}
+    \item \href{https://riot-os.github.io/riot-course/slides/03-riot-basics}{Riot basics}
+  \end{itemize}
+\end{itemize}
 \end{frame}
 

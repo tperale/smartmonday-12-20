@@ -41,7 +41,7 @@ le type de média physique utilisé (Ethernet, WLAN, …)
 \framesubtitle{Aloha}
 \begin{block}{}
 {
-  Quel moyen le plus simple d'interfacer la couche la couche physique ?
+  Quel moyen le plus simple d'interfacer la couche physique ?
 }
 \end{block}
 \input{presentation.tex/fig/aloha.tikz}
@@ -71,10 +71,19 @@ le type de média physique utilisé (Ethernet, WLAN, …)
 \framesubtitle{Multiplexing}
 \begin{block}{}
 {
-  Comment éviter les colisions ?
+  Comment éviter les collisions ?
 }
 \end{block}
-\input{presentation.tex/fig/alohamultiplex.tikz}
+
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+    \makebox[\linewidth]{\includegraphics[page=1,width=0.45\paperwidth]{presentation.tex/fig/channels.png}}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \input{presentation.tex/fig/alohamultiplex.tikz}
+  \end{column}
+\end{columns}
+
 \end{frame}
 
 \begin{frame}{LoRaWAN}
@@ -91,11 +100,14 @@ le type de média physique utilisé (Ethernet, WLAN, …)
 \framesubtitle{Pourquoi ce succès ?}
 \begin{itemize}
   \item LoRaWAN est open source contrairement à ses concurrents
+  \begin{itemize}
+    \item Implémentations indépendante de Semtech
+  \end{itemize}
   \item Possible de créer son réseau privé  
   \item Possible de créer son propre protocol basé sur LoRa PHY
   \item The Things Network
   \begin{itemize}
-    \item Réseau LoRaWAN crowdfunder
+    \item Réseau publique LoRaWAN crowdfunder
     \item Offrir sa gateway à d'autres utilisateurs
   \end{itemize}
 \end{itemize}
@@ -122,6 +134,7 @@ le type de média physique utilisé (Ethernet, WLAN, …)
     \item Routing entre noeuds
     \item Basse consommation
   \end{itemize}
+  \item LoRa 2.4GHz, LoRaSAT
 \end{itemize}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -163,3 +176,25 @@ le type de média physique utilisé (Ethernet, WLAN, …)
 \end{column}
 \end{columns}
 \end{frame}
+
+\begin{frame}{LoRaWAN}
+\framesubtitle{SDR}
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+  \begin{itemize}
+    \item Observable avec un RTL-SDR peu cher
+    \item 500kHz - 1766 MHz
+    \item Tentative de reverse du protocol disponible
+    \item GNU Radio
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+   \begin{center}
+    \makebox[\linewidth]{\includegraphics[page=1,width=0.50\paperwidth]{presentation.tex/fig/sdr.jpg}}
+  \end{center}
+  \end{column}
+\end{columns}
+
+\end{frame}
+
+
